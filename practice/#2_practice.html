@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico"
+    />
+    <title>Home - My first website.</title>
+    <style>
+      h1 {
+        color: blue;
+        text-decoration: underline;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 20px;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is my website" />
+  </head>
+  <body>
+    <header>
+      <h1>The Garden Times</h1>
+    </header>
+    <a href="http://google.com" target="_blank">Go to google</a>
+    <p>My name is <abbr title="Cho Jeongwon">CJW</abbr></p>
+
+    <form>
+      <div>
+        <label for="profile">Profile Photo</label>
+        <input id="profile" type="file" accept=".img/*, .pdf" />
+      </div>
+      <div>
+        <input required placeholder="Name" type="text" />
+        <input required placeholder="Last Name" type="text" />
+        <input required placeholder="Username" type="text" />
+        <input required placeholder="Password" minlength="10" type="password" />
+      </div>
+      <input type="submit" value="Create Account" />
+    </form>
+  </body>
+</html>
+
+<!--
+  #3.2 What Does Cascading Mean
+  cascading: ordered
+  So, if there are two style(in same property) on one tag, 
+  then first one would be applied, from top to bottom.
+  Only the last one is applied.
+-->
+
+<!--
+  #2.7 More Tags
+  tip) html, css, javascript 검색 시 mdn 같이 검색
+  <p> tag
+  <abbr> tag
+  <audio> tag: src, controls attribute 필수
+  <dialog> tag
+  ...
+  RESULT: tag는 외우지 말고 mdn에서 찾아서 쓰면 됨
+-->
+
+<!--
+  #2.8 Form Tags
+  형테: <tagname attrname="attrvalue">content</tagname>
+  * 만약 attribute value가 true or false만 있다면 그냥 attrname만 적어줘도 됨
+-->
+
+<!--
+  #2.9 More Tags and IDs
+  label은 input하고 같이 써야 함 
+  label의 for와 input의 id가 같아야 함
+  type: text, file, email, password, url, date, ...
+  id는 unique identifier
+  tag는 하나의 id만 가질 수 있다
+-->
+
+<!--
+  #2.10 Semantic HTML
+  non-semantic: 의미 없음
+    -> <div> <span>
+  semantic: 문서를 보기만 해도 그 의미를 짐작할 수 있는 것
+    -> <header> <main> <footer> <addres> <aside> <h1> ...
+  => 가능한 한 의미있는 box를 사용하자
+-->
+
+<!--
+  #2.11 Recap
+  attribute는 ""로
+  any tag can have an id
+    cf. only img can have a src
+-->
+
+<!--
+  #3.0 How to Add CSS to HTML
+  1. 같은 HTML 파일에 html code, css code를 놓는 방법
+    <style></style>
+   
+  2. html, css를 분리하는 방법
+    <link href="styles.css" rel=stylesheet" />
+-->
+
+<!--
+  #3.1 Writing Our First CSS Lines
+  element {
+      property: value;
+      property: value;
+  }
+-->

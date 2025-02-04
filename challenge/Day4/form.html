@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <h1>Create An Account</h1>
+    <form>
+      <label for="first-name">First name</label>
+      <input id="first-name" required placeholder="First name" type="text" />
+      <br />
+      <label for="last-name">Last name</label>
+      <input id="last-name" required placeholder="Last name" type="text" />
+      <br />
+      <label for="email">Email</label>
+      <input id="email" required placeholder="Email" type="email" />
+      <br />
+      <label for="username">Username</label>
+      <input id="username" required placeholder="Username" type="text" />
+      <br />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        required
+        placeholder="Password"
+        minlength="10"
+        type="password"
+      />
+      <br />
+      <label for="birth-date">Birth date</label>
+      <input id="birth-date" type="date" required />
+      <br />
+      <label for="happy">How happy are you?</label>
+      <input id="happy" type="range" min="1" max="10" required />
+      <br />
+      <label for="color">What is your fav. color?</label>
+      <input id="color" type="color" required />
+      <br />
+      <button type="submit">Create Account</button>
+    </form>
+  </body>
+</html>

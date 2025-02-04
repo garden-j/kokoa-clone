@@ -1,0 +1,61 @@
+/* DONT DELETE THIS */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* WRITE YOUR CODE BELOW */
+body {
+  background-color: rgb(230, 230, 230);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+#main {
+  width: 420px;
+  height: 820px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 400px;
+  border: 3px solid whitesmoke;
+  position: relative;
+}
+
+.nameCard {
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+}
+
+p {
+  font-weight: bold;
+}
+
+.card:first-child {
+  background-color: tomato;
+}
+.card:nth-child(2) {
+  background-color: teal;
+}
+.card:nth-child(3) {
+  background-color: burlywood;
+}
+.card:last-child {
+  background-color: thistle;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>The Garden Times</title>
+    <style>
+      @keyframes superFlip {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotateX(360deg);
+        }
+      }
+      @keyframes mainColor {
+        from {
+          background-color: skyblue;
+        }
+        to {
+          background-color: tomato;
+        }
+      }
+      body {
+        animation: mainColor 10s ease-in-out infinite;
+      }
+      a {
+        color: wheat;
+        background-color: tomato;
+        text-decoration: none;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-size: 55px;
+        transition: background-color 10s ease-in-out, color 5s ease-in-out;
+        transition: all 5s ease-in-out;
+      }
+      a:hover {
+        color: tomato;
+        background-color: wheat;
+      }
+      img {
+        border-radius: 50%;
+        animation: superFlip 10s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="">Go home</a>
+    <img src="sky.png" />
+  </body>
+</html>
+
+<!--
+    #4.0 Transitions
+    transition: 어떤 상태에서 다른 상태로의 변화를 애니메이션으로 만드는 방법
+    => transition은 state에 따라 바뀌는 property를 갖고 있으면 사용되는 것
+        transition이라는 속성은 state가 없는 요소에 붙어야 한다
+        transition: all; => 변화하는 모든 것에 transtion 적용
+        transition하기 위해서는 그 element가 state에 있어야 한다
+        and, transition: ; 은 state가 아니라 root(원래 element)에 있어야 한다
+    trnaslateX(100px) translateY(100px)
+    rotateX(180deg) rotateY(180deg)
+-->
+
+<!--
+    #4.1 Transition part Two
+    ease-in function: 브라우저에게 변화하는 방법을 알려주는 역할
+        linear: 변화 그래프가 직선
+        ease-in: 시작과 끝이 빠름
+        ease-in-out: 시작이 빠르고 끝이 느림
+        ease-out: 시작과 끝이 느림
+        ease
+    cubic-bezier(0, 0, 0, 0); 으로 직접 설정할 수도 있음
+    refer) https://matthewlein.com/tools/ceaser
+-->
+
+<!--
+    #4.2 Transformations
+    border-radius: 50%; => 원이 된다
+    transform: ;
+        => box element를 변형시키지 않는다. 즉 옆의 sibling들에게 영향을 끼치지 않는다. 
+        margin, padding이 적용되지 않는다. 일종의 3D transformation이기 때문이다. 
+        margin이나 padding을 주기 위해서 translateX, translateY를 사용하는 것이 아니다. 
+        다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해 사용하는 것이다.
+        transformation은 페이지의 픽셀의 다른 부분에서 일어난다. 
+        transformation은 box차원에서 일어나지 않는다.
+        transformation은 결합가능하다. 
+    CSS의 3D는 GPU로 돌아간다. => 3D작업을 할 수 있다
+    refer) transform mdn
+    ex.
+    selector {
+      transition: transform 2s ease-in-out;
+    }
+    selector:hover {
+      transform: ;
+    }
+-->
+
+<!--
+  #4.3 Animation part One
+  ex.
+  @keyframes animationName {
+    from {
+      transform: ;
+    }
+    to {
+      transform: ;
+    }
+  }
+  .
+  .
+  .
+  selector {
+    animation: animationName 5s ease-in-out (infinite무한 반복 가능);
+  }
+  => 마우스 움직임 없이 애니메이션 재생
+-->
+
+<!--
+  #4.4 Animation part TWo
+  ex. 3step으로 만들 수도 있다.
+  @keyframes animationName {
+    0% {
+      transform: rotateY(0);
+    }
+    50% {
+      transform: rotateY(180deg) translateY(100px);
+    }
+    100% {
+      transform:rotateY(0);
+    }
+  }
+  => 0~100 step 가능
+  대부분 animation으로 만들 수 있다. scale, translate, rotate, border-radius 등 거의 가능
+-->
+
+<!--
+  #4.5 Media Queries
+  media query: css만 이용해서 스크린 사이즈를 알 수 있는 방법
+  ex.
+  @media screen and (max-width: 400px) and (min-width: 650px) {
+    selector {
+      effect;
+    }
+  }
+  => 스크린이 400px보다 작으면, 650px보다 크면 selector에 effect가 나타나도록 할 수 있음.
+
+  * web inspector에 device toolbar를 이용하면 핸드폰에서 사용하는 것처럼 테스트 가능함
+
+  @media screen and (orentation: landscape) {
+    ~~ 
+  }
+  => if 가로모드일 때 ~~로 됨
+  => 가로모드인지 세로모드(portrait)인지도 감지 가능한 것!
+-->
+
+<!--
+  #4.6 Media Queries Recap
+  @media screen and condition and condition and condition... {
+    effect;
+    effect;
+    ...
+  }
+  (max-device-width: ) => 핸드폰만 감지 가능
+  (aspect-rateion: ) => 레티나디스플레이 감지 가능(안드로이드인지 아이폰인지)
+
+  media type
+    screen: 화면 자체 style
+    print: 출력시에 style
+-->

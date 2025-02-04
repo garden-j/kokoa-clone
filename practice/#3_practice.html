@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Home - My first website.</title>
+    <style>
+      html {
+        background-color: tomato;
+      }
+      h1 {
+        color: black;
+        text-decoration: underline;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 20px;
+      }
+      body {
+        background-color: thistle;
+        margin: 0;
+        padding: 20px 10px;
+      }
+      div {
+        height: 150px;
+        width: 150px;
+        background-color: whitesmoke;
+      }
+      span {
+        background-color: teal;
+        padding: 20px;
+        margin: 30px;
+      }
+      #tomato1,
+      #tomato2,
+      #tomato3 {
+        background-color: tomato;
+      }
+      .tomato {
+        background-color: khaki;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is my website" />
+  </head>
+  <body>
+    <header>
+      <h1>The Garden Times</h1>
+    </header>
+    <div></div>
+    <span id="tomato1">hello</span>
+    <span class="tomato">hello</span>
+    <span id="tomato2">hello</span>
+    <span class="tomato">hello</span>
+    <span id="tomato3">hello</span>
+    <span class="tomato">hello</span>
+  </body>
+</html>
+
+<!--
+  #3.0 How to Add CSS to HTML
+  1. 같은 HTML 파일에 html code, css code를 놓는 방법
+    <style></style>
+   
+  2. html, css를 분리하는 방법
+    <link href="styles.css" rel=stylesheet" />
+-->
+
+<!--
+  #3.1 Writing Our First CSS Lines
+  element {
+      property: value;
+      property: value;
+  }
+-->
+
+<!--
+  #3.2 What Does Cascading Mean
+  cascading: ordered
+  So, if there are two style(in same property) on one tag, 
+  then first one would be applied, from top to bottom.
+  Only the last one is applied.
+-->
+
+<!--
+  #3.3 Blocks and Inlines
+  1. block: box처럼 옆에 뭐가 더 오지 못하는 것
+    ex. <p> <div> <address> (대부분의 box는 block)
+  2. inline: 옆에 다른 것들이 올 수 있는 것 (= in the same line)
+    ex. <span> <a> <img> <code>
+-->
+
+<!--
+  #3.4 Margin Part One
+  1. inline -> block: possible
+    => display: block;
+  2. block -> inline: possible
+    => display: inline;
+    But, inline은 height, width를 가질 수 없다.
+  user agent stylesheet: browser가 자동으로 속성을 줬다는 것 
+  margin: box의 경계의 바깥에 있는 공간
+  border
+  padding
+-->
+
+<!--
+  #3.5 Margin Part Two
+  방향 없이 margin 값을 주면 상하좌우 모두 다 적용된다.
+  margin: 상하px 좌우px; 로 작성 가능
+  margin: 상px 좌px 하px 우px; (시계방향 순)
+  * if, 박스 두 개가 같은 border(위 아래에) => 두개가 하나로 취급 되어 위 아래가 같은 margin을 적용받는다
+    => collapsing margins
+-->
+
+<!--
+  #3.6 Padding and IDs
+  padding: border로부터 안쪽
+  <div> 는 id로 구분 ** id는 unique identifier!
+  css에서 id를 select해서 point할 때, #id{} 형태로 나타내면 됨
+  div {}와 #id {}를 둘 다 사용 
+-->
+
+<!--
+  #3.7 Border
+  border: n px; => 두께 n
+  * {} => everything
+    => then inline can be applied also? Yes.
+  from top to bottom => 모두 다 고칠 필요 없음
+-->
+
+<!--
+  #3.8 Classes
+  inline은 높이와 너비가 없음 -> 위 아래에 margin을 가질 수 없음(margin은 좌우로만 가질 수 있음)
+  -> 위 아래에 margin을 갖게 하려면 block으로 바꿔야 한다
+  id들을 한번에 묶어서 style 설정 가능
+  class를 사용해 같은 class에 해당하는 것 한번에 style설정 가능
+    => .class {}
+  한 element는 여러개의 class를 가질 수 있다. 
+    ex. <span class="tomato hello honey"></span>
+    cf. id
+-->
+
+<!--
+  #3.9 Inlne Block
+  display: inline-block;
+  => height, width, margin 가질 수 있음 + 옆에 다른 게 올 수 있음
+  but1, default값이 멋대로 정해짐
+  but2, 정해진 형식이 없음
+  but3, responsive design(반응형 디자인)을 지원하지 않는다
+    -> 창 크기가 달라지면 영향을 받는다
+-->
+
+<!--
+  #3.10 Flexbox Part One
+  flexbox: box를 아무데나 놓을 수 있음
+    rule1) 자식 element에는 아무것도 적으면 안됨. 부모 element에만 명시해야 함
+           자식 element를 움직이려면 부모 element를 flex container로 만들어야 함
+           => justify-content: ; 많은 설정 가능
+      justify-contetn: main axis(default: horizon)
+      align-items: cross axis(default: vertic)
+    rule2) align-items: cross axis에서 작용
+    rule3) justify-contetn: main axis에서 작용
+  if body has no height, align-items를 설정하더라도 바뀌지 않음(이미 맨 위아래를 차지하고 중심에 있어서)
+    => body의 height를 추가해줘야 함
+  height를 px로 설정해도 작동하지만 vh 단위를 사용하면 화면 크기에 따라 바뀐다. 
+-->
+
+<!--
+  #3.11 Flexbox Part Two
+  flex-direction: clomn; => main axis는 수직이 되고 cross axis는 수평이 된다
+  display: flex; 일 때 기본은 row(수평)
+  부모-자식
+      부모-자식
+    => 이런 관계 가능 부모와 자식이 둘 다 flex container일 수 있다
+  flex-wrap: wrap; => 한 줄에 들어가는 만큼 집어넣고 안되면 다음줄로
+  flex-wrap: nowrap; => 한 줄에 다 들어가게 함
+  flex-wrap: wrap-reverse;
+  flex-direction: column | row | column-revers | row-reverse ...;
+-->
+
+<!--
+  #3.12 Fixed
+  position property: 위치를 아주 조금 옮기고 싶을 때 사용
+  position: fixed;
+    => scroll해도 같은 위치에 보여짐. 내려가거나 올라가지 않는다. (네비바 같음) 
+    => layer를 부수고 다른 레이어에 위치해 있을 것임. 모든 것의 가장 위에 있는 것
+  top, left, bottom, right 중 하나만 설정해도 다른 레이어가 됨(같은 레이어에 있다가도)
+-->
+
+<!--
+  #3.13 Relative Absolute
+  position: static; (default)
+    => 박스를 처음 위치한 곳에 두는 것
+  position: relative;
+    => 박스가 처음 위치한 곳을 기준으로 이동. 아주 조금 옮기고 싶을 때 유용함
+    => relative로 설정하면 top, left, bottom, right을 설정할 수 있음
+  position: absolute;
+    => 가장 가까운 relative 부모를 기준으로 이동. 없을 경우 body 기준
+-->
+
+<!--
+  #3.14 Pseudo Selectors part One
+  tag: pseudo selectors {}
+  => class or id보다 더 좋은 방법
+  ex. tag: nth-child(3) {}
+      tag: nth-child(even) {}
+      tag: nth-child(2n+1) {}
+-->
+
+<!--
+  #3.15 Combinators
+  tag tag {}: tag 안의 tag
+  tag > tag {}: tag 바로 밑의 tag
+  tag + tag {}: tag 다음으로 오는 tag를 찾는다(inside가 아니라 next to)
+-->
+
+<!--
+  #3.16 Pseudo Selectors part Two
+  tag ~ tag {}: 뒤 tag가 형제인데 바로 뒤에 오지 않는 경우
+  input: required {}
+  input: optional {}
+  input[type="password"] {}
+  input[placeholder~="name"] {}
+    => ~=: contain의 의미. So, placeholder에 name을 포함하고 있는 input에 다 적용됨
+  $=: end의 의미 word로 끝나는 모든 해당 태그에 적용됨
+-->
+
+<!--
+  #3.17 States
+  state: :active, :hover, :focus, :visited, :focus-within
+  1. active: 마우스로 클릭했을 때 효과 적용
+  2. hover: 마우스 커서가 요소 위에 있을 때 효과 적용
+  3. focus: 키보드로 선택되었을 때 효과 적용
+  4. visited: 링크에만 적용. 방문한 링크에 다른 스타일 적용
+  5. focus-within: 부모 요소에 적용. 자신의 자식 요소 중 하나가 focus되었을 때 효과 적용
+                   focused인 자식을 가진 부모 요소의 상태를 말함
+  연계 가능
+    ex. form:hover input {
+      background-color: red;
+    }
+    => form이 hover 상태가 되면 input이 바뀐다.
+    ex. form:hover input:focused {
+      background-color: red;
+    }
+    => form이 hover 상태가 되고 input이 focused 상태가 되면 바뀐다.
+-->
+
+<!--
+  #3.18 Recap
+  ::placeholder => placeholder를 꾸밀 때 사용(색깔 등등)
+  ::selection => text를 select하면 select하는 부분 꾸밀 때 사용("")
+  ::first-letter => 첫 글자만
+  ::first-line => 첫 줄만
+  ... option 매우 많음
+
+-->
+
+<!--
+  #3.19 Colors and Variables
+  color is really important in css
+  color
+    1. hexadecimal: #~~
+    2. RGB: n, n, n
+       rgba(n, n, n, a): a는 투명도
+  * chrome extention: color picker
+  variable is also important
+  :root 요소에 변수 추가
+    :root는 기본적으로 모든 document의 뿌리가 되는 것
+    --main-color: ~~; => 다른 곳에 색 대신 --main-color 사용 => 다 변경할 필요 없음
+      var(--main-color) 로 사용
+-->
