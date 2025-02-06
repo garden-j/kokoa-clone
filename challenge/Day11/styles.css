@@ -1,3 +1,194 @@
 /* DONT DELETE THIS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 /* WRITE YOUR CODE BELOW */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 1000vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px 80px 20px;
+  font-size: 30px;
+  background-color: #fece32;
+  color: #000000;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+}
+
+.search input {
+  height: 60px;
+  width: 90%;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 5px 5px -5px;
+  display: flex;
+}
+
+/* to-do: move placeholder */
+
+.search i {
+  position: absolute;
+  left: 90%;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.bookOfTheDay,
+.topAdventure,
+.popularAuthors {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.book__info {
+  display: flex;
+}
+
+.book__img {
+  width: 150px;
+  height: 200px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.book__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 30px;
+}
+
+.book__name {
+  font-size: 25px;
+  font-weight: 500;
+}
+.author {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.rate {
+  color: #fece32;
+}
+.rate i:last-child {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.category {
+  display: flex;
+}
+
+.category div {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey {
+  margin-right: 15px;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookmark {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fece32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toRead {
+  width: 170px;
+  border-radius: 10px;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.booklist {
+  display: flex;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+}
+
+.book .book__img {
+  overflow-x: hidden;
+  width: 120px;
+  height: 160px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+.author__info {
+  display: flex;
+}
+
+.photo {
+  width: 170px;
+  height: 200px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.author__text {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.author__name {
+  font-size: 40px;
+}
+.author__desc {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.book__img,
+.photo {
+  background-color: #fece32;
+}
