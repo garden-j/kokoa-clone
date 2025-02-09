@@ -1,3 +1,13 @@
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden; /*마우스에 걸리지 않게 빠지는 것, but 여전히 존재*/
+  }
+}
+
 #friends-display-link {
   text-align: center;
   display: block;
@@ -27,4 +37,19 @@
   display: flex;
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.5);
+}
+
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  animation: hideSplashScreen 0.4s ease-in-out forwards;
+  /*forwards: 마지막 속성값은 마지막 keyfram으로 정해지고 애니메이션이 끝나고 유지한다*/
+  animation-delay: 2s;
 }
