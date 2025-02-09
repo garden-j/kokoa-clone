@@ -10,6 +10,27 @@
   font-weight: 600;
 }
 
+.header__icons {
+  display: flex;
+  align-items: center;
+}
+
 .header__icons span {
   margin-left: 25px;
+}
+
+.header__icons div {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.redDot {
+  position: absolute;
+  bottom: 6px;
+  left: 1px;
+  background-color: tomato;
+  border-radius: 15px;
+  width: 6px;
+  height: 6px;
 }
