@@ -19,18 +19,6 @@
   color: #2e363e;
 }
 
-@keyframes notificationAnimation {
-  0% {
-    transform: none;
-  }
-  50% {
-    transform: translateY(-5px) rotateY(180deg);
-  }
-  100% {
-    transform: none;
-  }
-}
-
 .nav__notification {
   background-color: tomato;
   display: block; /* span은 block이 아니라 width, height 적용이 안됨 */
@@ -45,7 +33,6 @@
   position: absolute;
   left: 15px;
   bottom: 15px;
-  animation: notificationAnimation 2s ease-in-out infinite;
 }
 
 .nav__redDot {
@@ -58,22 +45,7 @@
   bottom: 25px;
 }
 
-@keyframes appearBtnAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.nav__btn {
-  transform: translateY(50px);
-  opacity: 0;
-  will-change: transform; /*애니메이션이 좀 더 부드럽게 동작할 수 있게 한다*/
-  animation: appearBtnAnimation 1s ease-in-out forwards;
-}
+/* will-change: transform; 애니메이션이 좀 더 부드럽게 동작할 수 있게 한다*/
 
 .nav__btn:nth-child(2) {
   animation-delay: 0.5s;
@@ -85,4 +57,8 @@
 
 .nav__btn:last-child {
   animation-delay: 1.5s;
+}
+
+.nav__btn:hover {
+  scale: 1.1;
 }
